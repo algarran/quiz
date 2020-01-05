@@ -7,13 +7,13 @@ var questions = [
     },
 
     {
-        title: "Which event occurs when the user clicks on an HTML element?",
+        title: "How do you declare a JavaScript variable?",
         choices: ["var carName", "v carName", "variable carName"],
         answer: "var carName"
     },
 
     {
-        title: "Which event occurs when the user clicks on an HTML element?",
+        title: "Inside which HTML element do we put Javascript?",
         choices: ["<js>", "<script>", "<scripting>", "<javascript>"],
         answer: "<script>"
     },
