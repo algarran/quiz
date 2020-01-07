@@ -26,12 +26,18 @@ function displayQuiz(questionsNo) {
     if (questions.length === questionsNo) {
         stop();
 
-        var hrBreak = document.createElement('hr')
+        // var hrBreak = document.createElement('hr')
 
+        //creates submit button 
         var submitButton = document.createElement("button")
-        submitButton.innerHTML = "Submit Button"
-        document.getElementById('quizContainer').appendChild(submitButton);
 
+            // document.getElementsByName(submitButton).style.color = 'orange';
+
+        submitButton.innerHTML = "Submit Results"
+        document.getElementById('quizContainer').appendChild(submitButton);
+        submitButton.style.backgroundColor = "green"
+        submitButton.style.height = "150px"
+        submitButton.style.width = "250px"
     };
 
 
@@ -62,7 +68,7 @@ function displayQuiz(questionsNo) {
     };
 };
 
-// add submit button and store score in local data and post to highscores table
+// and store score in local data and post to highscores table
 
 // timer
 function startTimer() {
