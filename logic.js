@@ -5,8 +5,6 @@ var submitBtn = document.getElementById('Submit');
 
 var answerStorage = [];
 
-// var questionsNo = 0;
-
 //click to start quiz
 startBtn.addEventListener('click', startQuiz);
 // startBtn.addEventListener('click', startTimer);
@@ -22,17 +20,12 @@ function startQuiz() {
 function displayQuiz(questionsNo) {
     console.log(questionsNo);
 
-    // TODO: if no question end game
+    //if no question end game
     if (questions.length === questionsNo) {
         stop();
 
-        // var hrBreak = document.createElement('hr')
-
         //creates submit button 
         var submitButton = document.createElement("button")
-
-            // document.getElementsByName(submitButton).style.color = 'orange';
-
         submitButton.innerHTML = "Submit Results"
         document.getElementById('quizContainer').appendChild(submitButton);
         submitButton.style.backgroundColor = "green"
@@ -77,7 +70,7 @@ function displayQuiz(questionsNo) {
     };
 };
 
-// and store score in local data and post to highscores table
+// store score in local data and post to highscores table
 
 // timer
 function startTimer() {
