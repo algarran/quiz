@@ -3,69 +3,88 @@ var startBtn = document.getElementById('start');
 
 var submitBtn = document.getElementById('Submit');
 
-var questionsNo = 0;
+var answerStorage = [];
+
+// var questionsNo = 0;
 
 //click to start quiz
 startBtn.addEventListener('click', startQuiz);
-startBtn.addEventListener('click', startTimer);
+// startBtn.addEventListener('click', startTimer);
 
 function startQuiz() {
-    displayQuiz(questionsNo);
+    //empty out quiz intro
+    $("#quizIntro").empty();
+    displayQuiz(0);
+    startTimer();
 };
 
 //generate questions
 function displayQuiz(questionsNo) {
+    console.log(questionsNo);
 
-    //empty out quiz intro
-    $("#start").click(function () {
-        $("#quizIntro").empty();
-    });
+    // TODO: if no question end game
+    if (questions.length === questionsNo) {
+        stop();
 
-    questions[questionsNo].title, questions[questionsNo].choices;
+        var hrBreak = document.createElement('hr')
 
-    // here we need to add loop to iterate through questions
+        var submitButton = document.createElement("button")
+        submitButton.innerHTML = "Submit Button"
+        document.getElementById('quizContainer').appendChild(submitButton);
+
+    };
 
 
     var questionTitle = document.createElement("div")
     questionTitle.innerHTML = questions[questionsNo].title
     document.getElementById("quizContainer").appendChild(questionTitle);
-    var title = questions[questionsNo].title
+    var answer = questions[questionsNo].answer
     var choices = questions[questionsNo].choices
 
     for (var i = 0; i < choices.length; i++) {
         var answerTitle = document.createElement("button")
         answerTitle.innerHTML = choices[i]
+        answerTitle.value = choices[i]
         document.getElementById("quizContainer").appendChild(answerTitle);
+
+        answerTitle.addEventListener("click", function (e) {
+
+            console.log(e.target.value)
+            console.log(answer)
+            if (e.target.value === answer) {
+
+                // clear div
+                document.getElementById("quizContainer").innerHTML = "";
+
+                displayQuiz(++questionsNo);
+            };
+        });
     };
-
-    //creates next question button
-    var nextQuestion = document.createElement("button");
-    nextQuestion.innerHTML = " Next Question ";
-    document.body.appendChild(nextQuestion);
-
-    // questionsNo++;
-
-    // here we need an if else statement for correct and wrong answers. 
-    // correct answer iterates to the next question and wrong answer subtracts 2 seconds from timer.
-
-    // if(){
-    //     else(){
-
-    //     }
-    // }
-
-    // add submit button and store score in local data and post to highscores table
-
-
 };
 
-
+// add submit button and store score in local data and post to highscores table
 
 //timer
-function startTimer() {
-    var seconds = 70, $seconds = document.querySelector('#countdown');
-    (function countdown() {
-        $seconds.textContent = "Time Left: " + seconds + (seconds == 1 ? '' : 's')
-        if (seconds-- > 0) setTimeout(countdown, 750)
-    })();
-};
+// function startTimer() {
+//      $seconds = document.querySelector('#countdown');
+//     (function countdown() {
+//         $seconds.textContent = "Time Left: " + seconds + (seconds == 1 ? '' : 's')
+//         if (seconds-- > 0) setTimeout(countdown, 750)
+//     })();
+// };
+
+let totalTime = 75
+let timer = startTimer();
+
+function startTimer(){
+    return setInterval(()=>{
+        if(--totalTime == 0){
+            // TODO: time is up
+            clearInterval(timer);
+            if(totalTime = )
+        }
+    }, 1000)
+}
+
+
+var seconds = 75;
