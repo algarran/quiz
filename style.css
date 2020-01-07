@@ -10,6 +10,7 @@ button{
     background-color: grey;
     color: white;
     margin: auto;
+    
 }
 
 #countdown{
@@ -34,4 +35,15 @@ h1{
     padding-top: 20px;
     margin-top: auto;
     line-height: 3;
+}
+
+p{
+   font-size: 30px; 
+}
+
+#start{
+    height: 150px;
+    width: 250px;
+    background-color: green;
+    font-size: x-large;
 }

@@ -44,6 +44,9 @@ function displayQuiz(questionsNo) {
     var questionTitle = document.createElement("div")
     questionTitle.innerHTML = questions[questionsNo].title
     document.getElementById("quizContainer").appendChild(questionTitle);
+
+    questionTitle.style.fontSize = "30px"
+
     var answer = questions[questionsNo].answer
     var choices = questions[questionsNo].choices
 
@@ -51,6 +54,12 @@ function displayQuiz(questionsNo) {
         var answerTitle = document.createElement("button")
         answerTitle.innerHTML = choices[i]
         answerTitle.value = choices[i]
+
+        answerTitle.style.backgroundColor = "gray"
+        answerTitle.style.height = "50px"
+        answerTitle.style.width = "150px"
+        answerTitle.style.margin = "10px"
+
         document.getElementById("quizContainer").appendChild(answerTitle);
 
         answerTitle.addEventListener("click", function (e) {
