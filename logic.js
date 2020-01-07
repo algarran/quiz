@@ -64,27 +64,27 @@ function displayQuiz(questionsNo) {
 
 // add submit button and store score in local data and post to highscores table
 
-//timer
-// function startTimer() {
-//      $seconds = document.querySelector('#countdown');
-//     (function countdown() {
-//         $seconds.textContent = "Time Left: " + seconds + (seconds == 1 ? '' : 's')
-//         if (seconds-- > 0) setTimeout(countdown, 750)
-//     })();
-// };
+// timer
+function startTimer() {
+     $seconds = document.querySelector('#countdown');
+    (function countdown() {
+        $seconds.textContent = "Time Left: " + seconds + (seconds == 1 ? '' : 's')
+        if (seconds-- > 0) setTimeout(countdown, 750)
+    })();
+};
 
-let totalTime = 75
-let timer = startTimer();
+// let totalTime = 75
+// let timer = startTimer();
 
-function startTimer(){
-    return setInterval(()=>{
-        if(--totalTime == 0){
-            // TODO: time is up
-            clearInterval(timer);
-            if(totalTime = )
-        }
-    }, 1000)
-}
+// function startTimer(){
+//     return setInterval(()=>{
+//         // if(--totalTime == 0){
+//     //         // TODO: time is up
+//     //         clearInterval(timer);
+//     //         if(totalTime = 0
+//     //         ){
+//     // }, 1000)
+// }
 
 
 var seconds = 75;
