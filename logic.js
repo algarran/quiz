@@ -48,7 +48,7 @@ function displayQuiz(questionsNo) {
         answerTitle.innerHTML = choices[i]
         answerTitle.value = choices[i]
 
-        answerTitle.style.backgroundColor = "gray"
+        answerTitle.style.backgroundColor = "blue"
         answerTitle.style.height = "50px"
         answerTitle.style.width = "150px"
         answerTitle.style.margin = "10px"
